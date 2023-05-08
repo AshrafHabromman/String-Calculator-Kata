@@ -6,8 +6,10 @@
         {
         }
 
-        public int Add(string v)
+        public int Add(string numbers)
         {
+            if(numbers.CompareTo("") == 0)
+                return 0;
             throw new NotImplementedException();
         }
     }

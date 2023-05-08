@@ -1,4 +1,3 @@
-using Xunit;
 
 namespace String_Calculator_Kata._Tests
 {
