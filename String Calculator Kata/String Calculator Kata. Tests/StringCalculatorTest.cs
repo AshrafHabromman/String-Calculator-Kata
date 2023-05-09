@@ -84,7 +84,6 @@ namespace String_Calculator_Kata._Tests
 
         [Theory]
         [InlineData("//;\n2;1001", 2)]
-
         public void Add_BigNumbers_IgnoreThem(string numbers, int summation)
         {
             int actual = _stringCalculator.Add(numbers);

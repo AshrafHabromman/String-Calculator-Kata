@@ -34,7 +34,7 @@
                 if (intNumber < 0) {
                     negativeNumbers += number+" ";
                 }
-                
+                if (intNumber > 1000) continue;
                 summation += intNumber;
             }
             if (negativeNumbers.CompareTo("") != 0)
