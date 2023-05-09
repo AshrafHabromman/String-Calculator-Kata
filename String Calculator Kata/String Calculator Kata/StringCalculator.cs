@@ -14,7 +14,13 @@
             bool isNumeric = int.TryParse(numbers, out int n);
             if (isNumeric) { return n; }
 
-            throw new NotImplementedException();
+            var seqNumbres = numbers.Split(',');
+            int summation = 0;
+            foreach(var number in seqNumbres)
+            {
+                summation += int.Parse(number);
+            }
+            return summation;
         }
     }
 }
