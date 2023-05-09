@@ -70,5 +70,13 @@ namespace String_Calculator_Kata._Tests
 
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData("//;\n1;-2") ]
+        [InlineData("//;\n1;-2;-3")]
+        public void Add_NumbersWithNegative_ThrowsException(string numbers)
+        {
+            Assert.Throws<ArgumentException>(() => _stringCalculator.Add(numbers));
+        }
     }
 }
