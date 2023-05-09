@@ -72,11 +72,14 @@ namespace String_Calculator_Kata._Tests
         }
 
         [Theory]
-        [InlineData("//;\n1;-2") ]
-        [InlineData("//;\n1;-2;-3")]
-        public void Add_NumbersWithNegative_ThrowsException(string numbers)
+        [InlineData("//;\n1;-2", "Negatives not allowed: -2 ") ]
+        [InlineData("//;\n1;-2;-3", "Negatives not allowed: -2 -3 ")]
+        public void Add_NumbersWithNegative_ThrowsException(string numbers, string exceptionMessage )
         {
-            Assert.Throws<ArgumentException>(() => _stringCalculator.Add(numbers));
+            ArgumentException exception = 
+                Assert.Throws<ArgumentException>(() => _stringCalculator.Add(numbers));
+
+            Assert.Equal(exceptionMessage, exception.Message);
         }
     }
 }

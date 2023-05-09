@@ -24,11 +24,22 @@
             //"//;\n1;2"
             var seqNumbres = numbers.Split(delimiter);
             int summation = 0;
-            foreach(var number in seqNumbres)
+            string negativeNumbers = "";
+
+            foreach (var number in seqNumbres)
             {
                 bool canParse = int.TryParse(number, out int intNumber);
                 if (!canParse) continue;
-                summation += int.Parse(number);
+
+                if (intNumber < 0) {
+                    negativeNumbers += number+" ";
+                }
+                
+                summation += intNumber;
+            }
+            if (negativeNumbers.CompareTo("") != 0)
+            {
+                throw new ArgumentException($"Negatives not allowed: {negativeNumbers}");
             }
             return summation;
         }
