@@ -19,10 +19,9 @@ namespace String_Calculator_Kata._Tests
         {
             var stringCalculator = new StringCalculator();
 
-            int actual = stringCalculator.Add("1");
-            int expected = 1;
-
-            Assert.Equal(expected, actual);
+            int actual = stringCalculator.Add("13");
+            
+            Assert.Equal(13, actual);
 
         }
     }

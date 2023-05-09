@@ -10,6 +10,9 @@
         {
             if(numbers.CompareTo("") == 0)
                 return 0;
+
+            bool isNumeric = int.TryParse(numbers, out int n);
+            if (isNumeric) { return n; }
             throw new NotImplementedException();
         }
     }
