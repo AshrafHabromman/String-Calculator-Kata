@@ -62,6 +62,7 @@ namespace String_Calculator_Kata._Tests
         [Theory]
         [InlineData("//;\n1;2", 3)]
         [InlineData("//;\n1;2;3", 6)]
+        [InlineData("//#\n1#2#3", 6)]
         public void Add_NumbersWithDifferentDelimiters_ReturnsSummation(string numbers, int summation)
         {
             int actual = _stringCalculator.Add(numbers);

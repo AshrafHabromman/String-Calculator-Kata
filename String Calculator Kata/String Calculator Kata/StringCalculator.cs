@@ -14,12 +14,20 @@
             bool isNumeric = int.TryParse(numbers, out int n);
             if (isNumeric) { return n; }
 
-            numbers = numbers.Replace('\n', ',');
-
-            var seqNumbres = numbers.Split(',');
+            string delimiter = ",";
+            if (numbers.StartsWith("//"))
+            {
+                delimiter = numbers.Substring(2,1);
+                numbers = numbers.Substring(3);
+            }
+            numbers = numbers.Replace("\n", delimiter);
+            //"//;\n1;2"
+            var seqNumbres = numbers.Split(delimiter);
             int summation = 0;
             foreach(var number in seqNumbres)
             {
+                bool canParse = int.TryParse(number, out int intNumber);
+                if (!canParse) continue;
                 summation += int.Parse(number);
             }
             return summation;
