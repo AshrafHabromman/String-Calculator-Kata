@@ -3,25 +3,29 @@ namespace String_Calculator_Kata._Tests
 {
     public class StringCalculatorTest
     {
+        private StringCalculator _stringCalculator;
+
+        public StringCalculatorTest()
+        {
+            _stringCalculator = new StringCalculator();
+        }
+
         [Fact]
         public void Add_EmptyString_ReturnsZero()
         {
-            var stringCalculator = new StringCalculator();
+            int actual = _stringCalculator.Add("");
+            int expected = 0;
 
-            int actual = stringCalculator.Add("");
-
-            Assert.Equal(0, actual);
-
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
         public void Add_OneNumber_ReturnsItself()
         {
-            var stringCalculator = new StringCalculator();
+            int actual = _stringCalculator.Add("1");
+            int expected = 1;
 
-            int actual = stringCalculator.Add("13");
-            
-            Assert.Equal(13, actual);
+            Assert.Equal(expected, actual);
 
         }
     }
