@@ -14,6 +14,8 @@
             bool isNumeric = int.TryParse(numbers, out int n);
             if (isNumeric) { return n; }
 
+            numbers = numbers.Replace('\n', ',');
+
             var seqNumbres = numbers.Split(',');
             int summation = 0;
             foreach(var number in seqNumbres)
