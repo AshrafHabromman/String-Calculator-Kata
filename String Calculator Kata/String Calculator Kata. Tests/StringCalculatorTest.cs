@@ -81,5 +81,16 @@ namespace String_Calculator_Kata._Tests
 
             Assert.Equal(exceptionMessage, exception.Message);
         }
+
+        [Theory]
+        [InlineData("//;\n2;1001", 2)]
+
+        public void Add_BigNumbers_IgnoreThem(string numbers, int summation)
+        {
+            int actual = _stringCalculator.Add(numbers);
+            int expected = summation;
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

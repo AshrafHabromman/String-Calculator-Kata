@@ -21,7 +21,7 @@
                 numbers = numbers.Substring(3);
             }
             numbers = numbers.Replace("\n", delimiter);
-            //"//;\n1;2"
+
             var seqNumbres = numbers.Split(delimiter);
             int summation = 0;
             string negativeNumbers = "";
