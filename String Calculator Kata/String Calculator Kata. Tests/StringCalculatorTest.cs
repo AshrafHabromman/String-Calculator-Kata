@@ -58,5 +58,16 @@ namespace String_Calculator_Kata._Tests
 
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData("//;\n1;2", 3)]
+        [InlineData("//;\n1;2;3", 6)]
+        public void Add_NumbersWithDifferentDelimiters_ReturnsSummation(string numbers, int summation)
+        {
+            int actual = _stringCalculator.Add(numbers);
+            int expected = summation;
+
+            Assert.Equal(expected, actual);
+        }
     }
 }
