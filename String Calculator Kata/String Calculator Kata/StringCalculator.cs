@@ -13,6 +13,7 @@
 
             bool isNumeric = int.TryParse(numbers, out int n);
             if (isNumeric) { return n; }
+
             throw new NotImplementedException();
         }
     }

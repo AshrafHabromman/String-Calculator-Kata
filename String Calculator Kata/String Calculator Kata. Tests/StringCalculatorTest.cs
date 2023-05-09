@@ -28,5 +28,15 @@ namespace String_Calculator_Kata._Tests
             Assert.Equal(expected, actual);
 
         }
+
+        [Fact]
+        public void Add_TwoNumber_ReturnsSummation()
+        {
+            int actual = _stringCalculator.Add("1,2");
+            int expected = 3;
+
+            Assert.Equal(expected, actual);
+
+        }
     }
 }
