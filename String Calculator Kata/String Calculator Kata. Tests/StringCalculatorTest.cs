@@ -36,7 +36,17 @@ namespace String_Calculator_Kata._Tests
             int expected = 3;
 
             Assert.Equal(expected, actual);
+        }
 
+        [Theory]
+        [InlineData("1,1,1", 3)]
+        [InlineData("1,2,3", 6)]
+        public void Add_MoreThanTwoNumbers_ReturnsSummation(string numbers, int summation)
+        {
+            int actual = _stringCalculator.Add(numbers);
+            int expected = summation;
+
+            Assert.Equal(expected, actual);
         }
     }
 }
